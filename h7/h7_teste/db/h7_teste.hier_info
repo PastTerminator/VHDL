@@ -1,0 +1,8 @@
+|freqmod60
+clk => divider_clock~reg0.CLK
+clk => q[0].CLK
+clk => q[1].CLK
+clk => q[2].CLK
+divider_clock << divider_clock~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

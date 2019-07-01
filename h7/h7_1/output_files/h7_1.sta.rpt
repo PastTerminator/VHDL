@@ -1,0 +1,936 @@
+TimeQuest Timing Analyzer report for h7_1
+Wed Jun 26 11:05:59 2019
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'freq_div_3:inst1|divider_clock'
+ 12. Slow Model Setup: 'clk'
+ 13. Slow Model Hold: 'clk'
+ 14. Slow Model Hold: 'freq_div_3:inst1|divider_clock'
+ 15. Slow Model Minimum Pulse Width: 'clk'
+ 16. Slow Model Minimum Pulse Width: 'freq_div_3:inst1|divider_clock'
+ 17. Setup Times
+ 18. Hold Times
+ 19. Clock to Output Times
+ 20. Minimum Clock to Output Times
+ 21. Fast Model Setup Summary
+ 22. Fast Model Hold Summary
+ 23. Fast Model Recovery Summary
+ 24. Fast Model Removal Summary
+ 25. Fast Model Minimum Pulse Width Summary
+ 26. Fast Model Setup: 'freq_div_3:inst1|divider_clock'
+ 27. Fast Model Setup: 'clk'
+ 28. Fast Model Hold: 'clk'
+ 29. Fast Model Hold: 'freq_div_3:inst1|divider_clock'
+ 30. Fast Model Minimum Pulse Width: 'clk'
+ 31. Fast Model Minimum Pulse Width: 'freq_div_3:inst1|divider_clock'
+ 32. Setup Times
+ 33. Hold Times
+ 34. Clock to Output Times
+ 35. Minimum Clock to Output Times
+ 36. Multicorner Timing Analysis Summary
+ 37. Setup Times
+ 38. Hold Times
+ 39. Clock to Output Times
+ 40. Minimum Clock to Output Times
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; h7_1                                                              ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C5T144C6                                                       ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                         ;
++--------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------------------+
+; Clock Name                     ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                            ;
++--------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------------------+
+; clk                            ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                            ;
+; freq_div_3:inst1|divider_clock ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { freq_div_3:inst1|divider_clock } ;
++--------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                                       ;
++------------+-----------------+--------------------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                     ; Note                                                          ;
++------------+-----------------+--------------------------------+---------------------------------------------------------------+
+; 420.7 MHz  ; 420.7 MHz       ; freq_div_3:inst1|divider_clock ;                                                               ;
+; 970.87 MHz ; 420.17 MHz      ; clk                            ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+--------------------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------------------------------+
+; Slow Model Setup Summary                                ;
++--------------------------------+--------+---------------+
+; Clock                          ; Slack  ; End Point TNS ;
++--------------------------------+--------+---------------+
+; freq_div_3:inst1|divider_clock ; -1.377 ; -11.016       ;
+; clk                            ; -0.030 ; -0.030        ;
++--------------------------------+--------+---------------+
+
+
++---------------------------------------------------------+
+; Slow Model Hold Summary                                 ;
++--------------------------------+--------+---------------+
+; Clock                          ; Slack  ; End Point TNS ;
++--------------------------------+--------+---------------+
+; clk                            ; -2.209 ; -2.209        ;
+; freq_div_3:inst1|divider_clock ; 0.775  ; 0.000         ;
++--------------------------------+--------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++---------------------------------------------------------+
+; Slow Model Minimum Pulse Width Summary                  ;
++--------------------------------+--------+---------------+
+; Clock                          ; Slack  ; End Point TNS ;
++--------------------------------+--------+---------------+
+; clk                            ; -1.380 ; -4.380        ;
+; freq_div_3:inst1|divider_clock ; -0.500 ; -8.000        ;
++--------------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'freq_div_3:inst1|divider_clock'                                                                                                                ;
++--------+-----------------------+-----------------------+--------------------------------+--------------------------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node               ; Launch Clock                   ; Latch Clock                    ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+-----------------------+--------------------------------+--------------------------------+--------------+------------+------------+
+; -1.377 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.413      ;
+; -1.377 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.413      ;
+; -1.377 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.413      ;
+; -1.377 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.413      ;
+; -1.377 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.413      ;
+; -1.377 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.413      ;
+; -1.377 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.413      ;
+; -1.377 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.413      ;
+; -1.339 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.375      ;
+; -1.339 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.375      ;
+; -1.339 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.375      ;
+; -1.339 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.375      ;
+; -1.339 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.375      ;
+; -1.339 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.375      ;
+; -1.339 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.375      ;
+; -1.339 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.375      ;
+; -1.257 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.293      ;
+; -1.257 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.293      ;
+; -1.257 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.293      ;
+; -1.257 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.293      ;
+; -1.257 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.293      ;
+; -1.257 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.293      ;
+; -1.257 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.293      ;
+; -1.257 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.293      ;
+; -1.254 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.290      ;
+; -1.254 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.290      ;
+; -1.254 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.290      ;
+; -1.254 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.290      ;
+; -1.254 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.290      ;
+; -1.254 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.290      ;
+; -1.254 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.290      ;
+; -1.254 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.290      ;
+; -1.212 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.248      ;
+; -1.212 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.248      ;
+; -1.212 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.248      ;
+; -1.212 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.248      ;
+; -1.212 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.248      ;
+; -1.212 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.248      ;
+; -1.212 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.248      ;
+; -1.212 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.248      ;
+; -1.124 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.160      ;
+; -1.124 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.160      ;
+; -1.124 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.160      ;
+; -1.124 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.160      ;
+; -1.124 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.160      ;
+; -1.124 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.160      ;
+; -1.124 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.160      ;
+; -1.124 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.160      ;
+; -1.122 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.158      ;
+; -1.122 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.158      ;
+; -1.122 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.158      ;
+; -1.122 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.158      ;
+; -1.122 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.158      ;
+; -1.122 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.158      ;
+; -1.122 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.158      ;
+; -1.122 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.158      ;
+; -0.975 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.011      ;
+; -0.975 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.011      ;
+; -0.975 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.011      ;
+; -0.975 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.011      ;
+; -0.975 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.011      ;
+; -0.975 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.011      ;
+; -0.975 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.011      ;
+; -0.975 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 2.011      ;
++--------+-----------------------+-----------------------+--------------------------------+--------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                                          ;
++--------+--------------------------------+--------------------------------+--------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                      ; To Node                        ; Launch Clock                   ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------+--------------------------------+--------------------------------+-------------+--------------+------------+------------+
+; -0.030 ; freq_div_3:inst1|q[0]          ; freq_div_3:inst1|divider_clock ; clk                            ; clk         ; 1.000        ; 0.000      ; 1.066      ;
+; 0.243  ; freq_div_3:inst1|q[0]          ; freq_div_3:inst1|q[1]          ; clk                            ; clk         ; 1.000        ; 0.000      ; 0.793      ;
+; 0.254  ; freq_div_3:inst1|q[1]          ; freq_div_3:inst1|divider_clock ; clk                            ; clk         ; 1.000        ; 0.000      ; 0.782      ;
+; 0.379  ; freq_div_3:inst1|q[0]          ; freq_div_3:inst1|q[0]          ; clk                            ; clk         ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; freq_div_3:inst1|q[1]          ; freq_div_3:inst1|q[1]          ; clk                            ; clk         ; 1.000        ; 0.000      ; 0.657      ;
+; 2.479  ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; clk         ; 0.500        ; 2.350      ; 0.657      ;
+; 2.979  ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; clk         ; 1.000        ; 2.350      ; 0.657      ;
++--------+--------------------------------+--------------------------------+--------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                           ;
++--------+--------------------------------+--------------------------------+--------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                      ; To Node                        ; Launch Clock                   ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------+--------------------------------+--------------------------------+-------------+--------------+------------+------------+
+; -2.209 ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; clk         ; 0.000        ; 2.350      ; 0.657      ;
+; -1.709 ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; clk         ; -0.500       ; 2.350      ; 0.657      ;
+; 0.391  ; freq_div_3:inst1|q[0]          ; freq_div_3:inst1|q[0]          ; clk                            ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391  ; freq_div_3:inst1|q[1]          ; freq_div_3:inst1|q[1]          ; clk                            ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.516  ; freq_div_3:inst1|q[1]          ; freq_div_3:inst1|divider_clock ; clk                            ; clk         ; 0.000        ; 0.000      ; 0.782      ;
+; 0.527  ; freq_div_3:inst1|q[0]          ; freq_div_3:inst1|q[1]          ; clk                            ; clk         ; 0.000        ; 0.000      ; 0.793      ;
+; 0.800  ; freq_div_3:inst1|q[0]          ; freq_div_3:inst1|divider_clock ; clk                            ; clk         ; 0.000        ; 0.000      ; 1.066      ;
++--------+--------------------------------+--------------------------------+--------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'freq_div_3:inst1|divider_clock'                                                                                                                ;
++-------+-----------------------+-----------------------+--------------------------------+--------------------------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node               ; Launch Clock                   ; Latch Clock                    ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+-----------------------+--------------------------------+--------------------------------+--------------+------------+------------+
+; 0.775 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.041      ;
+; 0.782 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.048      ;
+; 0.782 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.048      ;
+; 0.831 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.097      ;
+; 0.841 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.107      ;
+; 0.841 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.107      ;
+; 0.978 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.244      ;
+; 1.014 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.280      ;
+; 1.192 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.458      ;
+; 1.192 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.458      ;
+; 1.217 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.483      ;
+; 1.227 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.493      ;
+; 1.227 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.493      ;
+; 1.263 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.529      ;
+; 1.263 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.529      ;
+; 1.277 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.543      ;
+; 1.298 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.564      ;
+; 1.298 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.564      ;
+; 1.334 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.600      ;
+; 1.348 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.614      ;
+; 1.361 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.627      ;
+; 1.369 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.635      ;
+; 1.369 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.635      ;
+; 1.376 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.642      ;
+; 1.405 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.671      ;
+; 1.419 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.685      ;
+; 1.440 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.706      ;
+; 1.447 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.713      ;
+; 1.490 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.756      ;
+; 1.511 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.777      ;
+; 1.518 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.784      ;
+; 1.561 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.827      ;
+; 1.589 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.855      ;
+; 1.632 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.898      ;
+; 1.660 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.926      ;
+; 1.731 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.997      ;
+; 1.745 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.011      ;
+; 1.745 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.011      ;
+; 1.745 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.011      ;
+; 1.745 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.011      ;
+; 1.745 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.011      ;
+; 1.745 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.011      ;
+; 1.745 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.011      ;
+; 1.892 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.158      ;
+; 1.892 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.158      ;
+; 1.892 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.158      ;
+; 1.892 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.158      ;
+; 1.892 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.158      ;
+; 1.892 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.158      ;
+; 1.894 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.160      ;
+; 1.894 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.160      ;
+; 1.894 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.160      ;
+; 1.982 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.248      ;
+; 1.982 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.248      ;
+; 1.982 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.248      ;
+; 1.982 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.248      ;
+; 1.982 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.248      ;
+; 2.024 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.290      ;
+; 2.024 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.290      ;
+; 2.024 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.290      ;
+; 2.024 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.290      ;
+; 2.027 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.293      ;
+; 2.027 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.293      ;
+; 2.109 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 2.375      ;
++-------+-----------------------+-----------------------+--------------------------------+--------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                           ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                         ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; freq_div_3:inst1|divider_clock ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; freq_div_3:inst1|divider_clock ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; freq_div_3:inst1|q[0]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; freq_div_3:inst1|q[0]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; freq_div_3:inst1|q[1]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; freq_div_3:inst1|q[1]          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst1|divider_clock|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst1|divider_clock|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst1|q[0]|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst1|q[0]|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst1|q[1]|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst1|q[1]|clk                 ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'freq_div_3:inst1|divider_clock'                                                                               ;
++--------+--------------+----------------+------------------+--------------------------------+------------+--------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                          ; Clock Edge ; Target                               ;
++--------+--------------+----------------+------------------+--------------------------------+------------+--------------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[0]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[0]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[1]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[1]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[2]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[2]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[3]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[3]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[4]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[4]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[5]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[5]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[6]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[6]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[7]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[7]                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst1|divider_clock|regout           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst1|divider_clock|regout           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst1|divider_clock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst1|divider_clock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst1|divider_clock~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst1|divider_clock~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[0]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[0]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[1]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[1]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[2]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[2]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[3]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[3]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[4]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[4]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[5]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[5]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[6]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[6]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[7]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[7]|clk                      ;
++--------+--------------+----------------+------------------+--------------------------------+------------+--------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                              ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+; Data Port ; Clock Port                     ; Rise  ; Fall  ; Clock Edge ; Clock Reference                ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+; trigger   ; freq_div_3:inst1|divider_clock ; 4.796 ; 4.796 ; Rise       ; freq_div_3:inst1|divider_clock ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                 ;
++-----------+--------------------------------+--------+--------+------------+--------------------------------+
+; Data Port ; Clock Port                     ; Rise   ; Fall   ; Clock Edge ; Clock Reference                ;
++-----------+--------------------------------+--------+--------+------------+--------------------------------+
+; trigger   ; freq_div_3:inst1|divider_clock ; -3.884 ; -3.884 ; Rise       ; freq_div_3:inst1|divider_clock ;
++-----------+--------------------------------+--------+--------+------------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                    ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+; Data Port ; Clock Port                     ; Rise  ; Fall  ; Clock Edge ; Clock Reference                ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+; q         ; freq_div_3:inst1|divider_clock ; 6.930 ; 6.930 ; Rise       ; freq_div_3:inst1|divider_clock ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                            ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+; Data Port ; Clock Port                     ; Rise  ; Fall  ; Clock Edge ; Clock Reference                ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+; q         ; freq_div_3:inst1|divider_clock ; 6.410 ; 6.410 ; Rise       ; freq_div_3:inst1|divider_clock ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+
+
++---------------------------------------------------------+
+; Fast Model Setup Summary                                ;
++--------------------------------+--------+---------------+
+; Clock                          ; Slack  ; End Point TNS ;
++--------------------------------+--------+---------------+
+; freq_div_3:inst1|divider_clock ; -0.156 ; -1.248        ;
+; clk                            ; 0.517  ; 0.000         ;
++--------------------------------+--------+---------------+
+
+
++---------------------------------------------------------+
+; Fast Model Hold Summary                                 ;
++--------------------------------+--------+---------------+
+; Clock                          ; Slack  ; End Point TNS ;
++--------------------------------+--------+---------------+
+; clk                            ; -1.346 ; -1.346        ;
+; freq_div_3:inst1|divider_clock ; 0.361  ; 0.000         ;
++--------------------------------+--------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++---------------------------------------------------------+
+; Fast Model Minimum Pulse Width Summary                  ;
++--------------------------------+--------+---------------+
+; Clock                          ; Slack  ; End Point TNS ;
++--------------------------------+--------+---------------+
+; clk                            ; -1.380 ; -4.380        ;
+; freq_div_3:inst1|divider_clock ; -0.500 ; -8.000        ;
++--------------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'freq_div_3:inst1|divider_clock'                                                                                                                ;
++--------+-----------------------+-----------------------+--------------------------------+--------------------------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node               ; Launch Clock                   ; Latch Clock                    ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+-----------------------+--------------------------------+--------------------------------+--------------+------------+------------+
+; -0.156 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.188      ;
+; -0.156 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.188      ;
+; -0.156 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.188      ;
+; -0.156 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.188      ;
+; -0.156 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.188      ;
+; -0.156 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.188      ;
+; -0.156 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.188      ;
+; -0.156 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.188      ;
+; -0.146 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.178      ;
+; -0.146 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.178      ;
+; -0.146 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.178      ;
+; -0.146 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.178      ;
+; -0.146 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.178      ;
+; -0.146 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.178      ;
+; -0.146 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.178      ;
+; -0.146 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.178      ;
+; -0.134 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.166      ;
+; -0.134 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.166      ;
+; -0.134 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.166      ;
+; -0.134 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.166      ;
+; -0.134 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.166      ;
+; -0.134 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.166      ;
+; -0.134 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.166      ;
+; -0.134 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.166      ;
+; -0.120 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.152      ;
+; -0.120 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.152      ;
+; -0.120 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.152      ;
+; -0.120 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.152      ;
+; -0.120 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.152      ;
+; -0.120 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.152      ;
+; -0.120 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.152      ;
+; -0.120 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.152      ;
+; -0.084 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.116      ;
+; -0.084 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.116      ;
+; -0.084 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.116      ;
+; -0.084 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.116      ;
+; -0.084 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.116      ;
+; -0.084 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.116      ;
+; -0.084 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.116      ;
+; -0.084 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.116      ;
+; -0.050 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.082      ;
+; -0.050 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.082      ;
+; -0.050 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.082      ;
+; -0.050 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.082      ;
+; -0.050 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.082      ;
+; -0.050 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.082      ;
+; -0.050 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.082      ;
+; -0.050 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.082      ;
+; -0.031 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.063      ;
+; -0.031 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.063      ;
+; -0.031 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.063      ;
+; -0.031 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.063      ;
+; -0.031 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.063      ;
+; -0.031 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.063      ;
+; -0.031 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.063      ;
+; -0.031 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.063      ;
+; 0.011  ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.021      ;
+; 0.011  ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.021      ;
+; 0.011  ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.021      ;
+; 0.011  ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.021      ;
+; 0.011  ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.021      ;
+; 0.011  ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.021      ;
+; 0.011  ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.021      ;
+; 0.011  ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 1.000        ; 0.000      ; 1.021      ;
++--------+-----------------------+-----------------------+--------------------------------+--------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                                         ;
++-------+--------------------------------+--------------------------------+--------------------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                      ; To Node                        ; Launch Clock                   ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------+--------------------------------+--------------------------------+-------------+--------------+------------+------------+
+; 0.517 ; freq_div_3:inst1|q[0]          ; freq_div_3:inst1|divider_clock ; clk                            ; clk         ; 1.000        ; 0.000      ; 0.515      ;
+; 0.635 ; freq_div_3:inst1|q[0]          ; freq_div_3:inst1|q[1]          ; clk                            ; clk         ; 1.000        ; 0.000      ; 0.397      ;
+; 0.644 ; freq_div_3:inst1|q[1]          ; freq_div_3:inst1|divider_clock ; clk                            ; clk         ; 1.000        ; 0.000      ; 0.388      ;
+; 0.665 ; freq_div_3:inst1|q[0]          ; freq_div_3:inst1|q[0]          ; clk                            ; clk         ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; freq_div_3:inst1|q[1]          ; freq_div_3:inst1|q[1]          ; clk                            ; clk         ; 1.000        ; 0.000      ; 0.367      ;
+; 1.726 ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; clk         ; 0.500        ; 1.420      ; 0.367      ;
+; 2.226 ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; clk         ; 1.000        ; 1.420      ; 0.367      ;
++-------+--------------------------------+--------------------------------+--------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                           ;
++--------+--------------------------------+--------------------------------+--------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                      ; To Node                        ; Launch Clock                   ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------+--------------------------------+--------------------------------+-------------+--------------+------------+------------+
+; -1.346 ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; clk         ; 0.000        ; 1.420      ; 0.367      ;
+; -0.846 ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; clk         ; -0.500       ; 1.420      ; 0.367      ;
+; 0.215  ; freq_div_3:inst1|q[0]          ; freq_div_3:inst1|q[0]          ; clk                            ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; freq_div_3:inst1|q[1]          ; freq_div_3:inst1|q[1]          ; clk                            ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.236  ; freq_div_3:inst1|q[1]          ; freq_div_3:inst1|divider_clock ; clk                            ; clk         ; 0.000        ; 0.000      ; 0.388      ;
+; 0.245  ; freq_div_3:inst1|q[0]          ; freq_div_3:inst1|q[1]          ; clk                            ; clk         ; 0.000        ; 0.000      ; 0.397      ;
+; 0.363  ; freq_div_3:inst1|q[0]          ; freq_div_3:inst1|divider_clock ; clk                            ; clk         ; 0.000        ; 0.000      ; 0.515      ;
++--------+--------------------------------+--------------------------------+--------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'freq_div_3:inst1|divider_clock'                                                                                                                ;
++-------+-----------------------+-----------------------+--------------------------------+--------------------------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node               ; Launch Clock                   ; Latch Clock                    ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+-----------------------+--------------------------------+--------------------------------+--------------+------------+------------+
+; 0.361 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.513      ;
+; 0.364 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.516      ;
+; 0.365 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.517      ;
+; 0.369 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.521      ;
+; 0.375 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.527      ;
+; 0.375 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.527      ;
+; 0.437 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.589      ;
+; 0.451 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.603      ;
+; 0.502 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.654      ;
+; 0.503 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.655      ;
+; 0.509 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.661      ;
+; 0.515 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.667      ;
+; 0.515 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.667      ;
+; 0.537 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.689      ;
+; 0.538 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.690      ;
+; 0.550 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.702      ;
+; 0.550 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.702      ;
+; 0.554 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.706      ;
+; 0.572 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.724      ;
+; 0.575 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.727      ;
+; 0.585 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.737      ;
+; 0.585 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.737      ;
+; 0.589 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.741      ;
+; 0.603 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.755      ;
+; 0.607 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.759      ;
+; 0.620 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.772      ;
+; 0.624 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.776      ;
+; 0.638 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.790      ;
+; 0.655 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.807      ;
+; 0.659 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.811      ;
+; 0.673 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.825      ;
+; 0.694 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.846      ;
+; 0.708 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.860      ;
+; 0.729 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.881      ;
+; 0.743 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.895      ;
+; 0.778 ; debouncer:inst|cnt[0] ; debouncer:inst|cnt[7] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 0.930      ;
+; 0.869 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.021      ;
+; 0.869 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.021      ;
+; 0.869 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.021      ;
+; 0.869 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.021      ;
+; 0.869 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.021      ;
+; 0.869 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[6] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.021      ;
+; 0.869 ; debouncer:inst|cnt[7] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.021      ;
+; 0.911 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.063      ;
+; 0.911 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.063      ;
+; 0.911 ; debouncer:inst|cnt[3] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.063      ;
+; 0.930 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.082      ;
+; 0.930 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.082      ;
+; 0.930 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.082      ;
+; 0.930 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.082      ;
+; 0.930 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[5] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.082      ;
+; 0.930 ; debouncer:inst|cnt[6] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.082      ;
+; 0.964 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.116      ;
+; 0.964 ; debouncer:inst|cnt[2] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.116      ;
+; 1.000 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.152      ;
+; 1.000 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.152      ;
+; 1.000 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.152      ;
+; 1.000 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[4] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.152      ;
+; 1.000 ; debouncer:inst|cnt[5] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.152      ;
+; 1.014 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[1] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.166      ;
+; 1.014 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[2] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.166      ;
+; 1.014 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[3] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.166      ;
+; 1.014 ; debouncer:inst|cnt[4] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.166      ;
+; 1.026 ; debouncer:inst|cnt[1] ; debouncer:inst|cnt[0] ; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 0.000        ; 0.000      ; 1.178      ;
++-------+-----------------------+-----------------------+--------------------------------+--------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                           ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                         ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; freq_div_3:inst1|divider_clock ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; freq_div_3:inst1|divider_clock ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; freq_div_3:inst1|q[0]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; freq_div_3:inst1|q[0]          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; freq_div_3:inst1|q[1]          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; freq_div_3:inst1|q[1]          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst1|divider_clock|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst1|divider_clock|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst1|q[0]|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst1|q[0]|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; inst1|q[1]|clk                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; inst1|q[1]|clk                 ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'freq_div_3:inst1|divider_clock'                                                                               ;
++--------+--------------+----------------+------------------+--------------------------------+------------+--------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock                          ; Clock Edge ; Target                               ;
++--------+--------------+----------------+------------------+--------------------------------+------------+--------------------------------------+
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[0]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[0]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[1]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[1]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[2]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[2]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[3]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[3]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[4]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[4]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[5]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[5]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[6]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[6]                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[7]                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; debouncer:inst|cnt[7]                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst1|divider_clock|regout           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst1|divider_clock|regout           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst1|divider_clock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst1|divider_clock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst1|divider_clock~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst1|divider_clock~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[0]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[0]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[1]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[1]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[2]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[2]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[3]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[3]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[4]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[4]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[5]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[5]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[6]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[6]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[7]|clk                      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; freq_div_3:inst1|divider_clock ; Rise       ; inst|cnt[7]|clk                      ;
++--------+--------------+----------------+------------------+--------------------------------+------------+--------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                              ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+; Data Port ; Clock Port                     ; Rise  ; Fall  ; Clock Edge ; Clock Reference                ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+; trigger   ; freq_div_3:inst1|divider_clock ; 2.699 ; 2.699 ; Rise       ; freq_div_3:inst1|divider_clock ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                 ;
++-----------+--------------------------------+--------+--------+------------+--------------------------------+
+; Data Port ; Clock Port                     ; Rise   ; Fall   ; Clock Edge ; Clock Reference                ;
++-----------+--------------------------------+--------+--------+------------+--------------------------------+
+; trigger   ; freq_div_3:inst1|divider_clock ; -2.255 ; -2.255 ; Rise       ; freq_div_3:inst1|divider_clock ;
++-----------+--------------------------------+--------+--------+------------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                    ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+; Data Port ; Clock Port                     ; Rise  ; Fall  ; Clock Edge ; Clock Reference                ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+; q         ; freq_div_3:inst1|divider_clock ; 3.699 ; 3.699 ; Rise       ; freq_div_3:inst1|divider_clock ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                            ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+; Data Port ; Clock Port                     ; Rise  ; Fall  ; Clock Edge ; Clock Reference                ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+; q         ; freq_div_3:inst1|divider_clock ; 3.434 ; 3.434 ; Rise       ; freq_div_3:inst1|divider_clock ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                           ;
++---------------------------------+---------+--------+----------+---------+---------------------+
+; Clock                           ; Setup   ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++---------------------------------+---------+--------+----------+---------+---------------------+
+; Worst-case Slack                ; -1.377  ; -2.209 ; N/A      ; N/A     ; -1.380              ;
+;  clk                            ; -0.030  ; -2.209 ; N/A      ; N/A     ; -1.380              ;
+;  freq_div_3:inst1|divider_clock ; -1.377  ; 0.361  ; N/A      ; N/A     ; -0.500              ;
+; Design-wide TNS                 ; -11.046 ; -2.209 ; 0.0      ; 0.0     ; -12.38              ;
+;  clk                            ; -0.030  ; -2.209 ; N/A      ; N/A     ; -4.380              ;
+;  freq_div_3:inst1|divider_clock ; -11.016 ; 0.000  ; N/A      ; N/A     ; -8.000              ;
++---------------------------------+---------+--------+----------+---------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                              ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+; Data Port ; Clock Port                     ; Rise  ; Fall  ; Clock Edge ; Clock Reference                ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+; trigger   ; freq_div_3:inst1|divider_clock ; 4.796 ; 4.796 ; Rise       ; freq_div_3:inst1|divider_clock ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                 ;
++-----------+--------------------------------+--------+--------+------------+--------------------------------+
+; Data Port ; Clock Port                     ; Rise   ; Fall   ; Clock Edge ; Clock Reference                ;
++-----------+--------------------------------+--------+--------+------------+--------------------------------+
+; trigger   ; freq_div_3:inst1|divider_clock ; -2.255 ; -2.255 ; Rise       ; freq_div_3:inst1|divider_clock ;
++-----------+--------------------------------+--------+--------+------------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                    ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+; Data Port ; Clock Port                     ; Rise  ; Fall  ; Clock Edge ; Clock Reference                ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+; q         ; freq_div_3:inst1|divider_clock ; 6.930 ; 6.930 ; Rise       ; freq_div_3:inst1|divider_clock ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                            ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+; Data Port ; Clock Port                     ; Rise  ; Fall  ; Clock Edge ; Clock Reference                ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+; q         ; freq_div_3:inst1|divider_clock ; 3.434 ; 3.434 ; Rise       ; freq_div_3:inst1|divider_clock ;
++-----------+--------------------------------+-------+-------+------------+--------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                             ;
++--------------------------------+--------------------------------+----------+----------+----------+----------+
+; From Clock                     ; To Clock                       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------------------------+--------------------------------+----------+----------+----------+----------+
+; clk                            ; clk                            ; 5        ; 0        ; 0        ; 0        ;
+; freq_div_3:inst1|divider_clock ; clk                            ; 1        ; 1        ; 0        ; 0        ;
+; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 100      ; 0        ; 0        ; 0        ;
++--------------------------------+--------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                              ;
++--------------------------------+--------------------------------+----------+----------+----------+----------+
+; From Clock                     ; To Clock                       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------------------------+--------------------------------+----------+----------+----------+----------+
+; clk                            ; clk                            ; 5        ; 0        ; 0        ; 0        ;
+; freq_div_3:inst1|divider_clock ; clk                            ; 1        ; 1        ; 0        ; 0        ;
+; freq_div_3:inst1|divider_clock ; freq_div_3:inst1|divider_clock ; 100      ; 0        ; 0        ; 0        ;
++--------------------------------+--------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 16    ; 16   ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 8     ; 8    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Jun 26 11:05:59 2019
+Info: Command: quartus_sta h7_1 -c h7_1
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'h7_1.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name freq_div_3:inst1|divider_clock freq_div_3:inst1|divider_clock
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.377
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.377       -11.016 freq_div_3:inst1|divider_clock 
+    Info (332119):    -0.030        -0.030 clk 
+Info (332146): Worst-case hold slack is -2.209
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.209        -2.209 clk 
+    Info (332119):     0.775         0.000 freq_div_3:inst1|divider_clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380        -4.380 clk 
+    Info (332119):    -0.500        -8.000 freq_div_3:inst1|divider_clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.156
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.156        -1.248 freq_div_3:inst1|divider_clock 
+    Info (332119):     0.517         0.000 clk 
+Info (332146): Worst-case hold slack is -1.346
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.346        -1.346 clk 
+    Info (332119):     0.361         0.000 freq_div_3:inst1|divider_clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380        -4.380 clk 
+    Info (332119):    -0.500        -8.000 freq_div_3:inst1|divider_clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 505 megabytes
+    Info: Processing ended: Wed Jun 26 11:05:59 2019
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
+
+

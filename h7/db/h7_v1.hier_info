@@ -1,0 +1,11 @@
+|controlador
+button => ~NO_FANOUT~
+clk => ~NO_FANOUT~
+priority_h5 => ~NO_FANOUT~
+cod5 <= cod5.DB_MAX_OUTPUT_PORT_TYPE
+c7 <= c7.DB_MAX_OUTPUT_PORT_TYPE
+fim_z <= fim_z.DB_MAX_OUTPUT_PORT_TYPE
+load <= load.DB_MAX_OUTPUT_PORT_TYPE
+out_h7 <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
